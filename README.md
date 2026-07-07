@@ -26,6 +26,8 @@ games/verspuzzle/                ← Bibelvers-Puzzle (Wörter zu einem Vers zus
 games/karteikarten/              ← Karteikarten zum Lernen (Vorder-/Rückseite, Selbsteinschätzung)
 games/sudoku/                    ← Mini-Sudoku mit christlichen Symbolen (4×4 / 6×6)
 games/kreuzwortraetsel/          ← Automatisch generiertes Kreuzworträtsel
+games/jigsaw/                    ← Echtes Puzzle mit ineinandergreifenden Puzzleteilen
+games/turmbau/                   ← Turmbau zu Babel (Stapel-Geschicklichkeitsspiel)
 
 andachten/                    ← Mini-Andachten zum Lesen/Blättern (kein Quiz)
 ```

@@ -452,6 +452,14 @@ input[type="text"]:focus, textarea:focus{
   border:none;
 }
 
+/* ---------- Echtes Puzzle (Puzzleteile) ---------- */
+.puzzle-piece{
+  transition: filter .15s ease;
+}
+.puzzle-piece:hover{
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.55)) brightness(1.04) !important;
+}
+
 /* ---------- Andachten ---------- */
 .devotion-text{
   font-size:17px;
