@@ -1,0 +1,22 @@
+[
+  {"start": "Denn also hat Gott die Welt geliebt…", "answer": "dass er seinen eingeborenen Sohn gab.", "reference": "Johannes 3,16"},
+  {"start": "Der Herr ist mein Hirte…", "answer": "mir wird nichts mangeln.", "reference": "Psalm 23,1"},
+  {"start": "Ich bin der Weg…", "answer": "und die Wahrheit und das Leben.", "reference": "Johannes 14,6"},
+  {"start": "Selig sind, die da geistlich arm sind…", "answer": "denn ihrer ist das Himmelreich.", "reference": "Matthäus 5,3"},
+  {"start": "Ihr sollt einander lieben…", "answer": "wie ich euch geliebt habe.", "reference": "Johannes 13,34"},
+  {"start": "Alles vermag ich…", "answer": "durch den, der mich stark macht.", "reference": "Philipper 4,13"},
+  {"start": "Jesus spricht zu ihnen: Ich bin das Brot…", "answer": "des Lebens.", "reference": "Johannes 6,35"},
+  {"start": "Denn wo dein Schatz ist…", "answer": "da ist auch euer Herz.", "reference": "Matthäus 6,21"},
+  {"start": "Kommt her zu mir…", "answer": "alle, die da mühselig und beladen seid, so will ich euch erquicken.", "reference": "Matthäus 11,28"},
+  {"start": "Denn ich weiß wohl…", "answer": "dass der Herr für euch sorgt.", "reference": "1. Korinther 10,13"},
+  {"start": "Der Herr ist meine Stärke…", "answer": "und mein Schild; mir hat geholfen.", "reference": "Psalm 28,7"},
+  {"start": "Denn wir haben hier keine bleibende Stadt…", "answer": "sondern wir suchen die zukünftige.", "reference": "Hebräer 13,14"},
+  {"start": "Seid fröhlich in Hoffnung…", "answer": "geduldig in Trübsal, beharrlich im Gebet.", "reference": "Römer 12,12"},
+  {"start": "Gott aber sei Dank…", "answer": "der uns den Sieg gibt durch unsern Herrn Jesus Christus.", "reference": "1. Korinther 15,57"},
+  {"start": "Wer da glauben wird und getauft wird…", "answer": "der wird selig werden.", "reference": "Markus 16,16"},
+  {"start": "Bittet, so wird euch gegeben…", "answer": "und ihr werdet empfangen.", "reference": "Matthäus 7,7"},
+  {"start": "Der Herr ist nahe…", "answer": "und er wird euch helfen.", "reference": "Psalm 145,18"},
+  {"start": "Denn wir wandeln im Glauben…", "answer": "und nicht nach dem, was sichtbar ist.", "reference": "2. Korinther 5,7"},
+  {"start": "Ich bin das Licht der Welt…", "answer": "wer mir nachfolgt, der wird nicht wandeln in der Finsternis, sondern wird das Licht des Lebens haben.", "reference": "Johannes 8,12"},
+  {"start": "Sorgt euch um nichts…", "answer": "sondern in allen Dingen lasst durch Gebet und Flehen mit Danksagung eure Anliegen vor Gott kundwerden.", "reference": "Philipper 4,6"}
+]

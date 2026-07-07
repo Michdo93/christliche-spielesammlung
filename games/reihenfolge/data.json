@@ -1,0 +1,144 @@
+[
+  {"solutionWord": "ADAM", "items": [
+    {"text": "Adam wird aus Staub erschaffen", "letter": "A"},
+    {"text": "Das Gebot über den Baum wird gegeben", "letter": "D"},
+    {"text": "Apfel vom Baum der Erkenntnis gegessen", "letter": "A"},
+    {"text": "Menschen werden aus dem Garten vertrieben", "letter": "M"}
+  ]},
+  {"solutionWord": "AMEN", "items": [
+    {"text": "Abraham empfängt Gottes Verheißung", "letter": "A"},
+    {"text": "Mose führt Israel aus Ägypten", "letter": "M"},
+    {"text": "Elija stellt die Baalspriester", "letter": "E"},
+    {"text": "Nehemia baut Jerusalems Mauern auf", "letter": "N"}
+  ]},
+  {"solutionWord": "HALLELUJA", "items": [
+    {"text": "Himmel und Erde werden geschaffen", "letter": "H"},
+    {"text": "Abraham wird berufen", "letter": "A"},
+    {"text": "Landnahme unter Josua beginnt", "letter": "L"},
+    {"text": "Loblied: Gesänge Davids werden im Heiligtum gesungen", "letter": "L"},
+    {"text": "Ein Tempel wird von Salomo gebaut", "letter": "E"},
+    {"text": "Leviten leiten den Lobpreis im Tempel", "letter": "L"},
+    {"text": "Unser Retter Jesus wird geboren", "letter": "U"},
+    {"text": "Jesus zieht in Jerusalem ein", "letter": "J"},
+    {"text": "Auferstehung Jesu wird bezeugt", "letter": "A"}
+  ]},
+  {"solutionWord": "SHALOM", "items": [
+    {"text": "Segen für Abraham wird zugesagt", "letter": "S"},
+    {"text": "Hinauszug aus Ägypten beginnt", "letter": "H"},
+    {"text": "Ankunft im verheißenen Land erfolgt", "letter": "A"},
+    {"text": "Lobpreis Davids stärkt das Volk", "letter": "L"},
+    {"text": "Opfer im Tempel werden dargebracht", "letter": "O"},
+    {"text": "Messias bringt Frieden in die Welt", "letter": "M"}
+  ]},
+  {"solutionWord": "JAHWEH", "items": [
+    {"text": "Jahwe beruft Abraham", "letter": "J"},
+    {"text": "Auszug aus Ägypten beginnt", "letter": "A"},
+    {"text": "Hütte des Begegnungszeltes wird errichtet", "letter": "H"},
+    {"text": "Wüstenwanderung endet nach vierzig Jahren", "letter": "W"},
+    {"text": "Einzug ins verheißene Land geschieht", "letter": "E"},
+    {"text": "Herrschaft Davids festigt Israel", "letter": "H"}
+  ]},
+  {"solutionWord": "JESUS", "items": [
+    {"text": "Jesaia kündigt den Messias an", "letter": "J"},
+    {"text": "Engel verkündet die Geburt Jesu", "letter": "E"},
+    {"text": "Simeon lobt das Kind im Tempel", "letter": "S"},
+    {"text": "Unterweisung in der Bergpredigt beginnt", "letter": "U"},
+    {"text": "Sendung der Jünger in alle Welt", "letter": "S"}
+  ]},
+  {"solutionWord": "LEBEN", "items": [
+    {"text": "Licht wird am ersten Tag geschaffen", "letter": "L"},
+    {"text": "Exodus (Auszug) aus Ägypten beginnt", "letter": "E"},
+    {"text": "Bergpredigt Jesu prägt das Leben", "letter": "B"},
+    {"text": "Erlösung geschieht am Kreuz", "letter": "E"},
+    {"text": "Neubeginn an Pfingsten durch den Geist", "letter": "N"}
+  ]},
+  {"solutionWord": "FRIEDEN", "items": [
+    {"text": "Flut endet, der Regenbogen erscheint", "letter": "F"},
+    {"text": "Rebekka wird Isaaks Frau", "letter": "R"},
+    {"text": "Israel zieht nach Ägypten", "letter": "I"},
+    {"text": "Exodus (Auszug) aus Ägypten beginnt", "letter": "E"},
+    {"text": "David wird König in Jerusalem", "letter": "D"},
+    {"text": "Ein Tempel wird von Salomo gebaut", "letter": "E"},
+    {"text": "Nehemia befestigt Jerusalems Mauern", "letter": "N"}
+  ]},
+  {"solutionWord": "GLAUBE", "items": [
+    {"text": "Gott beruft Abraham", "letter": "G"},
+    {"text": "Leiter Mose führt Israel aus Ägypten", "letter": "L"},
+    {"text": "Am Sinai werden die Gebote gegeben", "letter": "A"},
+    {"text": "Unter Josua: Überquerung des Jordan", "letter": "U"},
+    {"text": "Bau des Tempels durch Salomo", "letter": "B"},
+    {"text": "Evangelium breitet sich in der Welt aus", "letter": "E"}
+  ]},
+  {"solutionWord": "AUFERSTEHUNG", "items": [
+    {"text": "Abendmahl wird mit den Jüngern gefeiert", "letter": "A"},
+    {"text": "Urteil im Hohen Rat wird gesprochen", "letter": "U"},
+    {"text": "Führung zu Pilatus erfolgt am Morgen", "letter": "F"},
+    {"text": "Er wird gegeißelt und verspottet", "letter": "E"},
+    {"text": "Ruf am Kreuz: „Es ist vollbracht“", "letter": "R"},
+    {"text": "Stein verschließt das Grab", "letter": "S"},
+    {"text": "Tag des Sabbats vergeht in Stille", "letter": "T"},
+    {"text": "Engel verkünden: Er ist auferstanden", "letter": "E"},
+    {"text": "Hände des Auferstandenen werden gezeigt", "letter": "H"},
+    {"text": "Unterweisung der Jünger über vierzig Tage", "letter": "U"},
+    {"text": "Neue Mission: Geht zu allen Völkern", "letter": "N"},
+    {"text": "Gottes Geist kommt an Pfingsten", "letter": "G"}
+  ]},
+  {"solutionWord": "HOFFNUNG", "items": [
+    {"text": "Hagar erfährt Gottes Fürsorge in der Wüste", "letter": "H"},
+    {"text": "Opferlamm ersetzt Isaak auf dem Berg", "letter": "O"},
+    {"text": "Flucht aus Ägypten beginnt", "letter": "F"},
+    {"text": "Feuer- und Wolkensäule führt Israel", "letter": "F"},
+    {"text": "Nathan verheißt David ein ewiges Haus", "letter": "N"},
+    {"text": "Unser Retter Jesus wird geboren", "letter": "U"},
+    {"text": "Neuer Bund wird beim Abendmahl angekündigt", "letter": "N"},
+    {"text": "Grab ist leer – Auferstehung", "letter": "G"}
+  ]},
+  {"solutionWord": "KREUZIGUNG", "items": [
+    {"text": "Kuss des Judas verrät Jesus", "letter": "K"},
+    {"text": "Richter Pilatus verhört den Angeklagten", "letter": "R"},
+    {"text": "Er trägt das Kreuz nach Golgatha", "letter": "E"},
+    {"text": "Um die Kleider wird gelost", "letter": "U"},
+    {"text": "Zwei Verbrecher werden mitgekreuzigt", "letter": "Z"},
+    {"text": "Inschrift wird über dem Kreuz angebracht", "letter": "I"},
+    {"text": "Gallenschwamm wird gereicht", "letter": "G"},
+    {"text": "Um die sechste Stunde verfinstert sich der Himmel", "letter": "U"},
+    {"text": "Nun stirbt Jesus am Kreuz", "letter": "N"},
+    {"text": "Grab wird mit einem Stein verschlossen", "letter": "G"}
+  ]},
+  {"solutionWord": "EVANGELIUM", "items": [
+    {"text": "Engel kündigt die Geburt Jesu an", "letter": "E"},
+    {"text": "Vorläufer Johannes ruft zur Umkehr", "letter": "V"},
+    {"text": "Ankunft Jesu im Jordan zur Taufe", "letter": "A"},
+    {"text": "Nachfolge der ersten Jünger beginnt", "letter": "N"},
+    {"text": "Gleichnisse vom Reich Gottes werden gelehrt", "letter": "G"},
+    {"text": "Einzug in Jerusalem am Palmsonntag", "letter": "E"},
+    {"text": "Leiden beginnt: Verrat und Gefangennahme", "letter": "L"},
+    {"text": "Im Grab ruht der Herr am Sabbat", "letter": "I"},
+    {"text": "Überwindung des Todes – Auferstehung", "letter": "U"},
+    {"text": "Mission: Geht hin in alle Welt", "letter": "M"}
+  ]},
+  {"solutionWord": "APOSTEL", "items": [
+    {"text": "Aufruf am See: Jesus beruft Fischer", "letter": "A"},
+    {"text": "Petrus bekennt: Du bist der Christus", "letter": "P"},
+    {"text": "Oberer Raum: Abendmahl wird gefeiert", "letter": "O"},
+    {"text": "Sendung nach Ostern: Friede sei mit euch", "letter": "S"},
+    {"text": "Treffen am Pfingsttag: Geist kommt", "letter": "T"},
+    {"text": "Erste Predigt des Petrus erreicht viele", "letter": "E"},
+    {"text": "Länder werden auf Missionsreisen erreicht", "letter": "L"}
+  ]},
+  {"solutionWord": "JÜNGER", "items": [
+    {"text": "Jesus ruft Fischer am See Genezareth", "letter": "J"},
+    {"text": "Überall verkündet er das Reich Gottes", "letter": "Ü"},
+    {"text": "Nachfolge kostet alles, sagt er", "letter": "N"},
+    {"text": "Gesandte werden zu zweit ausgesandt", "letter": "G"},
+    {"text": "Emmausjünger erkennen den Auferstandenen", "letter": "E"},
+    {"text": "Rüstzeug des Geistes empfangen sie an Pfingsten", "letter": "R"}
+  ]},
+  {"solutionWord": "HIRTE", "items": [
+    {"text": "Hirten hören die Botschaft in der Nacht", "letter": "H"},
+    {"text": "In Bethlehem finden sie das Kind", "letter": "I"},
+    {"text": "Ruf Jesu: Ich bin der gute Hirte", "letter": "R"},
+    {"text": "Türen der Schafhürde erklärt er im Gleichnis", "letter": "T"},
+    {"text": "Ewiges Leben verheißt er seinen Schafen", "letter": "E"}
+  ]}
+]

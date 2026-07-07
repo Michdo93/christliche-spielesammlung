@@ -1,0 +1,22 @@
+[
+  {"clues": ["Ich war der erste Mensch.", "Gott formte mich aus Staub.", "Ich lebte im Garten Eden mit meiner Frau."], "answer": "Adam"},
+  {"clues": ["Ich war die erste Frau.", "Ich wurde aus einer Rippe erschaffen.", "Meine Entscheidung beim Baum der Erkenntnis hatte Folgen."], "answer": "Eva"},
+  {"clues": ["Ich baute ein großes Schiff.", "Die Tiere kamen paarweise zu mir.", "Nach der Flut setzte Gott den Regenbogen als Zeichen."], "answer": "Noah"},
+  {"clues": ["Ich verließ meine Heimat auf Gottes Befehl.", "Mir wurde ein großer Nachkomme verheißen.", "Mein Sohn Isaak sollte fast geopfert werden."], "answer": "Abraham"},
+  {"clues": ["Ich war ein verheißenes Kind.", "Mein Vater war bereit, mich auf dem Berg Moriah zu opfern.", "Ich war der Vater von Esau und Jakob."], "answer": "Isaak"},
+  {"clues": ["Ich kämpfte mit einem Engel.", "Ich erhielt den neuen Namen „Israel“.", "Meine 12 Söhne wurden die Stammväter Israels."], "answer": "Jakob"},
+  {"clues": ["Ich hatte Träume, die meine Brüder neidisch machten.", "Ich wurde nach Ägypten verkauft.", "Am Ende wurde ich zweithöchster Mann im Land."], "answer": "Josef", "altAnswers": ["Josef (Sohn Jakobs)"]},
+  {"clues": ["Ich wuchs am Hof des Pharao auf.", "Ich führte Israel durch das Schilfmeer.", "Auf dem Sinai empfing ich die Zehn Gebote."], "answer": "Mose"},
+  {"clues": ["Ich war der Nachfolger Moses.", "Ich führte Israel ins verheißene Land.", "Bei Jericho fielen die Mauern nach dem Blasen der Hörner."], "answer": "Josua"},
+  {"clues": ["Ich war ein Richter Israels.", "Ich wollte ein Zeichen mit Wolle von Gott sehen.", "Mit nur 300 Männern besiegte ich ein großes Heer."], "answer": "Gideon"},
+  {"clues": ["Schon als Kind hörte ich Gottes Stimme im Tempel.", "Ich salbte Saul und David zu Königen.", "Ich war der letzte Richter Israels."], "answer": "Samuel"},
+  {"clues": ["Ich war der erste König Israels.", "Ich war groß und stattlich.", "Ich verlor Gottes Gunst und mein Königtum."], "answer": "Saul"},
+  {"clues": ["Ich war ein Hirtenjunge.", "Ich besiegte Goliath.", "Ich schrieb viele Psalmen."], "answer": "David"},
+  {"clues": ["Ich war für meine Weisheit bekannt.", "Ich baute den Tempel in Jerusalem.", "Ich hatte viele Frauen und großen Reichtum."], "answer": "Salomo"},
+  {"clues": ["Ich war ein Prophet.", "Ich sprach von einem kommenden Retter.", "Meine Worte werden oft im Neuen Testament zitiert."], "answer": "Jesaja"},
+  {"clues": ["Ich war ein Prophet in Jerusalem.", "Ich warnte vor der Zerstörung des Tempels.", "Man nennt mich auch den „weinenden Propheten“."], "answer": "Jeremia"},
+  {"clues": ["Ich versuchte, Gottes Auftrag zu fliehen.", "Ich wurde von einem großen Fisch verschluckt.", "Am Ende predigte ich in Ninive."], "answer": "Jona"},
+  {"clues": ["Ich war ein Fischer.", "Ich verleugnete Jesus dreimal.", "Ich wurde ein Apostel und verkündigte mutig an Pfingsten."], "answer": "Petrus"},
+  {"clues": ["Ich verfolgte Christen.", "Vor Damaskus veränderte Jesus mein Leben.", "Ich schrieb viele Briefe des Neuen Testaments."], "answer": "Paulus"},
+  {"clues": ["Ich wurde in Bethlehem geboren.", "Ich lehrte in Gleichnissen und tat Wunder.", "Ich starb am Kreuz und stand von den Toten auf."], "answer": "Jesus"}
+]
