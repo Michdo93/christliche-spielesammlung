@@ -1,0 +1,20 @@
+[
+  {"symbol": "✝️", "label": "Kreuz"},
+  {"symbol": "🐟", "label": "Fisch"},
+  {"symbol": "🕊️", "label": "Taube"},
+  {"symbol": "🍞", "label": "Brot"},
+  {"symbol": "🍷", "label": "Wein"},
+  {"symbol": "🌈", "label": "Regenbogen"},
+  {"symbol": "👑", "label": "Krone"},
+  {"symbol": "🔔", "label": "Glocke"},
+  {"symbol": "📖", "label": "Bibel"},
+  {"symbol": "🙏", "label": "Gebet"},
+  {"symbol": "⚓", "label": "Anker"},
+  {"symbol": "🕯️", "label": "Kerze"},
+  {"symbol": "🐑", "label": "Lamm"},
+  {"symbol": "⭐", "label": "Stern von Bethlehem"},
+  {"symbol": "🌿", "label": "Ölzweig"},
+  {"symbol": "🔥", "label": "Feuer des Heiligen Geistes"},
+  {"symbol": "🌾", "label": "Weizen/Ähre"},
+  {"symbol": "🗝️", "label": "Schlüssel des Himmelreichs"}
+]

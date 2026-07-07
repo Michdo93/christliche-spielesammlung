@@ -1,0 +1,40 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sky3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#12172a"/>
+      <stop offset="60%" stop-color="#262f52"/>
+      <stop offset="100%" stop-color="#7fa08c"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" fill="url(#sky3)"/>
+  <circle cx="90" cy="80" r="26" fill="#f2ddab" opacity="0.9"/>
+  <g fill="#f6f1e4" opacity="0.85">
+    <circle cx="150" cy="60" r="2"/>
+    <circle cx="250" cy="90" r="2"/>
+    <circle cx="310" cy="50" r="2"/>
+    <circle cx="200" cy="40" r="2"/>
+    <circle cx="340" cy="120" r="2"/>
+    <circle cx="60" cy="140" r="2"/>
+  </g>
+  <path d="M0 320 Q100 260 200 300 T400 290 L400 400 L0 400 Z" fill="#3c5648"/>
+  <!-- Hirte -->
+  <g stroke="#211d33" stroke-width="6" stroke-linecap="round" fill="none">
+    <line x1="180" y1="230" x2="180" y2="300"/>
+    <line x1="180" y1="245" x2="150" y2="220"/>
+    <line x1="180" y1="245" x2="205" y2="270"/>
+    <line x1="180" y1="300" x2="165" y2="335"/>
+    <line x1="180" y1="300" x2="195" y2="335"/>
+  </g>
+  <circle cx="180" cy="215" r="14" fill="#211d33"/>
+  <line x1="205" y1="270" x2="230" y2="330" stroke="#5a3f24" stroke-width="5" stroke-linecap="round"/>
+  <path d="M215 250 q20 -6 22 14" stroke="#5a3f24" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <!-- Schafe -->
+  <g fill="#f6f1e4">
+    <ellipse cx="260" cy="330" rx="20" ry="14"/>
+    <circle cx="278" cy="322" r="9"/>
+    <ellipse cx="300" cy="340" rx="18" ry="12"/>
+    <circle cx="316" cy="333" r="8"/>
+    <ellipse cx="100" cy="345" rx="16" ry="11"/>
+    <circle cx="114" cy="339" r="7"/>
+  </g>
+</svg>

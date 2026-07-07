@@ -1,0 +1,4 @@
+{
+  "4": { "symbols": ["✝️", "🐟", "🕊️", "📖"], "boxRows": 2, "boxCols": 2, "clues": 8 },
+  "6": { "symbols": ["✝️", "🐟", "🕊️", "📖", "🍞", "🍷"], "boxRows": 2, "boxCols": 3, "clues": 18 }
+}

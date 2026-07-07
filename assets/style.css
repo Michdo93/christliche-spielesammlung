@@ -391,6 +391,67 @@ input[type="text"]:focus, textarea:focus{
 }
 .word-bank .chip.found{ background: rgba(127,179,122,0.35); color:#26482a; text-decoration:line-through; }
 
+/* ---------- Memory ---------- */
+.memory-card{
+  aspect-ratio: 1;
+  perspective: 600px;
+  cursor:pointer;
+}
+.memory-card-inner{
+  position:relative;
+  width:100%; height:100%;
+  transition: transform .45s;
+  transform-style: preserve-3d;
+}
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner{
+  transform: rotateY(180deg);
+}
+.memory-face{
+  position:absolute;
+  inset:0;
+  display:flex; align-items:center; justify-content:center;
+  border-radius:14px;
+  backface-visibility: hidden;
+  font-size: clamp(22px, 5vw, 34px);
+  border: 1.5px solid #ddd3ba;
+}
+.memory-back{
+  background: linear-gradient(135deg, var(--night-2), var(--night-3));
+  color: var(--gold-light);
+  font-family: var(--font-display);
+}
+.memory-front{
+  background: #fffdf8;
+  transform: rotateY(180deg);
+}
+.memory-card.matched .memory-front{
+  background: rgba(127,179,122,0.25);
+  border-color: var(--good);
+}
+
+/* ---------- Sliding-Puzzle ---------- */
+.puzzle-board{
+  position:relative;
+  margin: 0 auto 16px;
+  border-radius: 12px;
+  overflow:hidden;
+  border: 2px solid var(--gold-dim);
+}
+.puzzle-tile{
+  position:absolute;
+  cursor:pointer;
+  background-repeat:no-repeat;
+  border: 1px solid rgba(0,0,0,0.15);
+  box-sizing:border-box;
+  transition: top .18s ease, left .18s ease;
+}
+.puzzle-tile.blank{
+  cursor:default;
+  background:none !important;
+  border:none;
+}
+
 /* ---------- Andachten ---------- */
 .devotion-text{
   font-size:17px;

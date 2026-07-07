@@ -19,6 +19,13 @@ games/matching/                ← Zuordnungs-Quiz (Personen/Ereignisse, Psalmen
 games/reihenfolge/             ← Chronologie-Rätsel mit Lösungswort
 games/anagramme/               ← Bibel-Anagramme
 games/wortgitter/               ← Wortgitter (Raster wird bei jeder Runde neu generiert)
+games/galgenmaennchen/          ← Galgenmännchen (biblische Begriffe erraten)
+games/memory/                   ← Memory mit christlichen Symbolen (Kreuz, Fisch, Taube …)
+games/puzzle/                   ← Schiebepuzzle (3×3/4×4) mit selbst gestalteten Motiven
+games/verspuzzle/                ← Bibelvers-Puzzle (Wörter zu einem Vers zusammensetzen)
+games/karteikarten/              ← Karteikarten zum Lernen (Vorder-/Rückseite, Selbsteinschätzung)
+games/sudoku/                    ← Mini-Sudoku mit christlichen Symbolen (4×4 / 6×6)
+games/kreuzwortraetsel/          ← Automatisch generiertes Kreuzworträtsel
 
 andachten/                    ← Mini-Andachten zum Lesen/Blättern (kein Quiz)
 ```
