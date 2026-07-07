@@ -12,7 +12,6 @@ const SIZES = [
   { key: "4", n: 4, label: "Mittel (4×4 – 16 Teile)" },
   { key: "5", n: 5, label: "Schwer (5×5 – 25 Teile)" }
 ];
-const SNAP_DISTANCE = 18;
 
 const app = document.getElementById("app");
 
@@ -22,9 +21,6 @@ let n = 3;
 let pieceSize = 0;
 let margin = 0;      // Überstand für Tabs rund um jedes Teil
 let piecePaths = {}; // "r,c" -> lokaler Pfad-String (Element-relative Koordinaten)
-let lockedCount = 0;
-let totalPieces = 0;
-let moves = 0;
 let startTime = null;
 let timerId = null;
 
@@ -217,13 +213,17 @@ function highlightSelection(container, selectedEl) {
 
 /* ---------------- Spielaufbau ---------------- */
 
+let pieces = [];        // { row, col, x, y, groupId, el }
+let nextGroupId = 0;
+let SNAP_TOLERANCE = 24;
+let mergesNeeded = 0;
+
 function startPuzzle() {
   pieceSize = DISPLAY_SIZE / n;
   margin = pieceSize * 0.32;
+  SNAP_TOLERANCE = Math.max(20, pieceSize * 0.26);
   piecePaths = buildGridPaths(n, n, pieceSize, pieceSize);
-  lockedCount = 0;
-  totalPieces = n * n;
-  moves = 0;
+  mergesNeeded = n * n - 1; // Anzahl nötiger Verschmelzungen, bis alle Teile eine Gruppe bilden
   startTime = Date.now();
   renderBoard();
   clearInterval(timerId);
@@ -241,48 +241,58 @@ function updateTimer() {
 }
 
 function renderBoard() {
-  const workspaceW = Math.max(DISPLAY_SIZE + 40, DISPLAY_SIZE * 1.9);
-  const workspaceH = DISPLAY_SIZE + 40 + pieceSize * 1.6;
+  const boxSize = pieceSize + margin * 2;
+  const gap = 10;
+  const cols = Math.max(1, Math.floor((Math.min(880, window.innerWidth - 60)) / (boxSize + gap)));
+  const rows = Math.ceil((n * n) / cols);
+  const workspaceW = Math.max(340, cols * (boxSize + gap) + gap);
+  const workspaceH = Math.min(700, Math.max(320, rows * (boxSize + gap) + gap));
 
   app.innerHTML = `
     <div class="game-toolbar">
       <span class="pill">🖼️ ${currentImage.label}</span>
-      <span class="pill">✔ ${lockedCount} / ${totalPieces} Teile</span>
+      <span class="pill">🧩 Verbunden: 0 / ${mergesNeeded}</span>
       <span class="pill" id="timePill">⏱️ 00:00</span>
       <button class="btn secondary" id="switchBtn">Motiv/Größe wechseln</button>
     </div>
-    ${progressBarHTML(lockedCount, totalPieces)}
-    <p style="text-align:center; opacity:.7; margin:0 0 10px;">Ziehe die Teile an ihren Platz im gestrichelten Rahmen.</p>
+    ${progressBarHTML(0, mergesNeeded)}
+    <div style="display:flex; gap:16px; align-items:flex-start; flex-wrap:wrap; justify-content:center; margin-bottom:12px;">
+      <div style="text-align:center;">
+        <img src="${currentImage.file}" alt="Vorschau" style="width:90px; height:90px; object-fit:cover; border-radius:8px; border:1.5px solid var(--gold-dim);">
+        <p style="font-size:12px; opacity:.7; margin:4px 0 0;">Vorschau</p>
+      </div>
+      <p style="max-width:420px; opacity:.75; font-size:14px;">
+        Ziehe zwei zueinander passende Teile nah aneinander – sie rasten automatisch ein,
+        sobald sie an der richtigen Seite nah genug beieinander sind. Ein Teil kannst du auch
+        an ein bereits verbundenes Stück andocken; nicht zusammengehörige Teile lassen sich nicht verbinden.
+      </p>
+    </div>
     <div id="workspace" style="position:relative; width:100%; max-width:${workspaceW}px; height:${workspaceH}px;
         margin:0 auto; overflow:auto; background:rgba(255,255,255,0.04); border-radius:14px; border:1px dashed rgba(216,171,92,0.3);">
-      <div id="targetFrame" style="position:absolute; left:20px; top:20px; width:${DISPLAY_SIZE}px; height:${DISPLAY_SIZE}px;
-          border:2px dashed var(--gold-dim); border-radius:6px; background-image:url('${currentImage.file}');
-          background-size:${DISPLAY_SIZE}px ${DISPLAY_SIZE}px; opacity:1;">
-        <div style="position:absolute; inset:0; background:rgba(18,23,42,0.72);"></div>
-      </div>
     </div>
   `;
   document.getElementById("switchBtn").onclick = renderPicker;
 
   const workspace = document.getElementById("workspace");
-  const targetLeft = 20, targetTop = 20;
-  const scatterTop = targetTop + DISPLAY_SIZE + 20;
-  const scatterHeight = pieceSize * 1.4;
+  pieces = [];
+  nextGroupId = 0;
 
   const order = shuffle(Array.from({ length: n * n }, (_, i) => i));
-  order.forEach((idx, shuffleIdx) => {
+  order.forEach((idx, slot) => {
     const r = Math.floor(idx / n), c = idx % n;
-    createPieceEl(r, c, targetLeft, targetTop, workspace, shuffleIdx, scatterTop, scatterHeight, workspaceW);
+    const gridRow = Math.floor(slot / cols), gridCol = slot % cols;
+    const jitterX = (Math.random() - 0.5) * (gap * 0.8);
+    const jitterY = (Math.random() - 0.5) * (gap * 0.8);
+    const x = gap + gridCol * (boxSize + gap) + jitterX;
+    const y = gap + gridRow * (boxSize + gap) + jitterY;
+    createPieceEl(r, c, x, y, workspace, slot);
   });
 }
 
-function createPieceEl(r, c, targetLeft, targetTop, workspace, shuffleIdx, scatterTop, scatterHeight, workspaceW) {
+function createPieceEl(r, c, x, y, workspace, slot) {
   const key = r + "," + c;
-  const localPath = shiftPathString(piecePaths[key], margin, margin);
+  const localPath = shiftPathString(piecePaths[key], margin - c * pieceSize, margin - r * pieceSize);
   const boxSize = pieceSize + margin * 2;
-
-  const correctX = targetLeft + c * pieceSize - margin;
-  const correctY = targetTop + r * pieceSize - margin;
 
   const el = document.createElement("div");
   el.className = "puzzle-piece";
@@ -296,86 +306,130 @@ function createPieceEl(r, c, targetLeft, targetTop, workspace, shuffleIdx, scatt
   el.style.filter = "drop-shadow(0 2px 4px rgba(0,0,0,0.45))";
   el.style.cursor = "grab";
   el.style.touchAction = "none";
-  el.dataset.correctX = correctX;
-  el.dataset.correctY = correctY;
-  el.dataset.locked = "0";
+  el.style.left = x + "px";
+  el.style.top = y + "px";
+  el.style.zIndex = 1 + slot;
 
-  // Zufällige Startposition im "Vorrat"-Bereich unterhalb des Zielrahmens
-  const maxX = Math.max(10, workspaceW - boxSize - 10);
-  const startX = 10 + Math.random() * maxX;
-  const startY = scatterTop + Math.random() * Math.max(10, scatterHeight - boxSize);
-  el.style.left = startX + "px";
-  el.style.top = startY + "px";
-  el.style.zIndex = 1 + shuffleIdx;
-
-  attachDragHandlers(el, workspace);
   workspace.appendChild(el);
+
+  const piece = { row: r, col: c, x, y, groupId: nextGroupId++, el };
+  pieces.push(piece);
+  attachDragHandlers(piece, workspace);
 }
 
-/* ---------------- Drag & Drop (Pointer Events) ---------------- */
+/* ---------------- Drag & Drop (Pointer Events, gruppenbasiert) ---------------- */
 
-function attachDragHandlers(el, workspace) {
+function groupMembers(groupId) {
+  return pieces.filter(p => p.groupId === groupId);
+}
+
+function attachDragHandlers(piece, workspace) {
   let dragging = false;
-  let offsetX = 0, offsetY = 0;
+  let startPointerX = 0, startPointerY = 0;
+  let startPositions = null; // Map piece -> {x,y} zu Beginn des Zugs
   let zCounter = 500;
 
-  el.addEventListener("pointerdown", (e) => {
-    if (el.dataset.locked === "1") return;
+  piece.el.addEventListener("pointerdown", (e) => {
     dragging = true;
-    el.setPointerCapture(e.pointerId);
-    const rect = el.getBoundingClientRect();
-    offsetX = e.clientX - rect.left;
-    offsetY = e.clientY - rect.top;
-    el.style.cursor = "grabbing";
-    el.style.zIndex = ++zCounter;
+    piece.el.setPointerCapture(e.pointerId);
+    startPointerX = e.clientX;
+    startPointerY = e.clientY;
+    const members = groupMembers(piece.groupId);
+    startPositions = members.map(p => ({ piece: p, x: p.x, y: p.y }));
+    members.forEach(p => { p.el.style.zIndex = ++zCounter; });
+    piece.el.style.cursor = "grabbing";
   });
 
-  el.addEventListener("pointermove", (e) => {
+  piece.el.addEventListener("pointermove", (e) => {
     if (!dragging) return;
-    const wsRect = workspace.getBoundingClientRect();
-    const newLeft = e.clientX - wsRect.left - offsetX + workspace.scrollLeft;
-    const newTop = e.clientY - wsRect.top - offsetY + workspace.scrollTop;
-    el.style.left = newLeft + "px";
-    el.style.top = newTop + "px";
+    const dx = e.clientX - startPointerX;
+    const dy = e.clientY - startPointerY;
+    startPositions.forEach(({ piece: p, x, y }) => {
+      p.x = x + dx;
+      p.y = y + dy;
+      p.el.style.left = p.x + "px";
+      p.el.style.top = p.y + "px";
+    });
   });
 
-  function endDrag(e) {
+  function endDrag() {
     if (!dragging) return;
     dragging = false;
-    el.style.cursor = "grab";
-    moves++;
-
-    const curLeft = parseFloat(el.style.left);
-    const curTop = parseFloat(el.style.top);
-    const correctX = parseFloat(el.dataset.correctX);
-    const correctY = parseFloat(el.dataset.correctY);
-    const dist = Math.hypot(curLeft - correctX, curTop - correctY);
-
-    if (dist <= SNAP_DISTANCE) {
-      el.style.left = correctX + "px";
-      el.style.top = correctY + "px";
-      el.dataset.locked = "1";
-      el.style.cursor = "default";
-      el.style.filter = "none";
-      el.style.zIndex = 10;
-      lockedCount++;
-      updateProgress();
-      if (lockedCount === totalPieces) {
-        clearInterval(timerId);
-        setTimeout(renderWin, 400);
-      }
-    }
+    piece.el.style.cursor = "grab";
+    tryConnect(piece.groupId);
   }
 
-  el.addEventListener("pointerup", endDrag);
-  el.addEventListener("pointercancel", endDrag);
+  piece.el.addEventListener("pointerup", endDrag);
+  piece.el.addEventListener("pointercancel", endDrag);
+}
+
+/* ---------------- Nachbarschafts-Verbindungslogik ---------------- */
+
+function neighborsOf(p) {
+  return [
+    { row: p.row - 1, col: p.col, dr: -1, dc: 0 },
+    { row: p.row + 1, col: p.col, dr: 1, dc: 0 },
+    { row: p.row, col: p.col - 1, dr: 0, dc: -1 },
+    { row: p.row, col: p.col + 1, dr: 0, dc: 1 }
+  ].filter(pos => pos.row >= 0 && pos.row < n && pos.col >= 0 && pos.col < n);
+}
+
+function findPiece(row, col) {
+  return pieces.find(p => p.row === row && p.col === col);
+}
+
+function tryConnect(startGroupId) {
+  let groupId = startGroupId;
+  let changed = true;
+  while (changed) {
+    changed = false;
+    const members = groupMembers(groupId);
+    for (const p of members) {
+      for (const n2 of neighborsOf(p)) {
+        const neighbor = findPiece(n2.row, n2.col);
+        if (!neighbor || neighbor.groupId === groupId) continue;
+
+        const expectedDX = n2.dc * pieceSize;
+        const expectedDY = n2.dr * pieceSize;
+        const actualDX = neighbor.x - p.x;
+        const actualDY = neighbor.y - p.y;
+
+        if (Math.abs(actualDX - expectedDX) <= SNAP_TOLERANCE && Math.abs(actualDY - expectedDY) <= SNAP_TOLERANCE) {
+          // Diese Gruppe so verschieben, dass p exakt relativ zu neighbor sitzt
+          const deltaX = (neighbor.x - expectedDX) - p.x;
+          const deltaY = (neighbor.y - expectedDY) - p.y;
+          groupMembers(groupId).forEach(q => {
+            q.x += deltaX; q.y += deltaY;
+            q.el.style.left = q.x + "px";
+            q.el.style.top = q.y + "px";
+          });
+
+          const targetGroupId = neighbor.groupId;
+          groupMembers(groupId).forEach(q => { q.groupId = targetGroupId; });
+          groupId = targetGroupId;
+
+          changed = true;
+          break;
+        }
+      }
+      if (changed) break;
+    }
+  }
+  updateProgress();
+  const groupCount = new Set(pieces.map(p => p.groupId)).size;
+  if (groupCount === 1) {
+    clearInterval(timerId);
+    setTimeout(renderWin, 400);
+  }
 }
 
 function updateProgress() {
+  const groupCount = new Set(pieces.map(p => p.groupId)).size;
+  const mergesDone = (n * n) - groupCount;
   const pill = document.querySelectorAll(".pill")[1];
-  if (pill) pill.textContent = `✔ ${lockedCount} / ${totalPieces} Teile`;
+  if (pill) pill.textContent = `🧩 Verbunden: ${mergesDone} / ${mergesNeeded}`;
   const fill = document.querySelector(".progress-fill");
-  if (fill) fill.style.width = Math.round((lockedCount / totalPieces) * 100) + "%";
+  if (fill) fill.style.width = Math.round((mergesDone / mergesNeeded) * 100) + "%";
 }
 
 function renderWin() {
@@ -383,7 +437,7 @@ function renderWin() {
     <div class="result">
       <p class="pill">Zusammengesetzt! 🎉</p>
       <div class="score">${formatTime(Math.floor((Date.now() - startTime) / 1000))}</div>
-      <p>${currentImage.label} – ${totalPieces} Teile, ${moves} Züge</p>
+      <p>${currentImage.label} – ${n * n} Teile</p>
       <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
         <button class="btn primary" id="againBtn">Neu mischen</button>
         <button class="btn secondary" id="switchBtn">Motiv/Größe wechseln</button>
